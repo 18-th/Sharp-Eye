@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace Presenter.Utils
 {
-    public class Class1
+    public enum ConnectStatus
     {
+        Ok,
+        ServerNotFound,
+        IncorrectPassOrLogin
     }
 }
