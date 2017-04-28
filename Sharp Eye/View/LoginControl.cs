@@ -11,6 +11,12 @@ using View.Interfaces;
 
 namespace View
 {
+    /// <summary>
+    /// Объект этого клаксса взаимодействует с пользоватлем. 
+    /// Выполняет проверку введенных значений пользователем, 
+    /// выводит сообщение в случае возникновения ошибки и т.д. 
+    /// </summary>
+
     public partial class LoginControl : UserControl, ILoginView
     {
         public LoginControl()

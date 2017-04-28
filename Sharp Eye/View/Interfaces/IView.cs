@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace View.Interfaces
 {
-    interface IView
+    //<summary>
+    //Сожержит базовые методы для всех контролов
+    //</summary>
+    public interface IView
     {
         void Show();
         void Close();

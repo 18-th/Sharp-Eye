@@ -7,7 +7,10 @@ using Model.Utils;
 
 namespace Model.Interfaces
 {
-    interface IConnectionModel
+    /// <summary>
+    /// Задает необходимый функцонал соединения.
+    /// </summary>
+    public interface IConnectionModel
     {
         ConnectStatus Status { set; get; }
         event Action Done;

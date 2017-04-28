@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Presenter.Utils
+namespace Model.Utils
 {
+    /// <summary>
+    /// Определяет результат завершения процесса соеденинения с сервером.
+    /// </summary>
     public enum ConnectStatus
     {
         Ok,

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace View.Interfaces
 {
+    /// <summary>
+    /// С помощью данного интерфейса презентер взаимодействует с формой авторизации.
+    /// </summary>
     public interface ILoginView : IView
     {
         string Server { set; get; }

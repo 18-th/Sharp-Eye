@@ -9,6 +9,10 @@ using Presenter.Interfaces;
 
 namespace Presenter
 {
+    /// <summary>
+    ///  Презентер авторизации. 
+    ///  Управляет контролом авторизации и объектом соединения.
+    /// </summary>
     public class LoginPresenter : ILoginPresenter
     {
         private ILoginView _view;

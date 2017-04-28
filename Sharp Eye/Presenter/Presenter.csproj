@@ -42,11 +42,15 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="LoginPresenter.cs" />
-    <Compile Include="PresenterInterfaces\IConnectionEvent.cs" />
-    <Compile Include="PresenterInterfaces\ILoginPresenter.cs" />
+    <Compile Include="Interfaces\IConnectionEvent.cs" />
+    <Compile Include="Interfaces\ILoginPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{2685a021-6a66-45ee-a1c4-594a02dfcb6c}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\View\View.csproj">
       <Project>{e362b729-8e88-49fb-8945-524250dd9cd5}</Project>
       <Name>View</Name>

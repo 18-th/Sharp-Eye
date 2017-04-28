@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Presenter.Interfaces
-{
+{   /// <summary>
+    ///  
+    /// </summary>
     interface ILoginPresenter
     {
         void Connect();
