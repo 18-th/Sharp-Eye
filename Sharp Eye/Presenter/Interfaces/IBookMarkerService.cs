@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Presenter.Interfaces
 {
+    /// <summary>
+    /// Определяет 
+    /// </summary>
+
     interface IBookMarkerService
     {
+        void CreateMarker(string id, DateTime dateTime);
     }
 }

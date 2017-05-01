@@ -40,10 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookMarkerService.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Interfaces\MainPresenter.cs" />
+    <Compile Include="Interfaces\IBookMarkerService.cs" />
+    <Compile Include="Interfaces\IMainPresenter.cs" />
+    <Compile Include="Interfaces\IPrintScreenService.cs" />
     <Compile Include="LoginPresenter.cs" />
     <Compile Include="Interfaces\ILoginPresenter.cs" />
+    <Compile Include="MainPresenter.cs" />
+    <Compile Include="PrintScreenService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
