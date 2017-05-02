@@ -16,6 +16,9 @@ namespace View
         public void Connect(string server, string login, string password)
         {
             throw new NotImplementedException();
+            //
+            Status = ConnectStatus.Ok;
+            Done();
         }
     }
 }
