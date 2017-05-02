@@ -20,5 +20,10 @@ namespace View
         {
             InitializeComponent();
         }
+
+        private void ContainerControl_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill; 
+        }
     }
 }

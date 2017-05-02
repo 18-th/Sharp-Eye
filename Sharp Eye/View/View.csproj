@@ -74,6 +74,9 @@
     <Compile Include="Interfaces\IView.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ContainerControl.resx">
+      <DependentUpon>ContainerControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </EmbeddedResource>
