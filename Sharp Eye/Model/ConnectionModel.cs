@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Model.Interfaces;
 using Model.Utils;
 
-namespace View
+namespace Model
 {
     public class ConnectionModel : IConnectionModel
     {

@@ -1,4 +1,4 @@
-﻿namespace View
+﻿namespace Model
 {
     partial class MainControl
     {

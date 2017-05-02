@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationManager.cs" />
     <Compile Include="BookMarkerService.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Interfaces\IBookMarkerService.cs" />
     <Compile Include="Interfaces\IMainPresenter.cs" />
     <Compile Include="Interfaces\IPrintScreenService.cs" />
