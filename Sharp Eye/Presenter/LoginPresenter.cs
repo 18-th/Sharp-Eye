@@ -18,18 +18,33 @@ namespace Presenter
         private ILoginView _view;
         private IConnectionModel _connectModel;
 
+        public event Action Connected;
+
         public LoginPresenter(ILoginView view, IConnectionModel connectModel)
         {
             if (view != null && connectModel != null)
             {
                 this._view = view;
                 this._connectModel = connectModel;
+                _view.Login += () => login();
+                _connectModel.Done += () => done();
             }
             else
             {
                 throw new Exception("Null point");
             }
             
+        }
+
+        private void login()
+        {
+
+        }
+
+
+        private void done()
+        {
+
         }
 
         public void Connect()
