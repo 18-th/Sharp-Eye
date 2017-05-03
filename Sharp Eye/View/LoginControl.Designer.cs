@@ -59,6 +59,7 @@
             this.RememberPassCheck.TabIndex = 1;
             this.RememberPassCheck.Text = "Запомнить пароль";
             this.RememberPassCheck.UseVisualStyleBackColor = true;
+            this.RememberPassCheck.CheckedChanged += new System.EventHandler(this.RememberPassCheck_CheckedChanged);
             // 
             // AutoLoginCheck
             // 
@@ -69,6 +70,7 @@
             this.AutoLoginCheck.TabIndex = 2;
             this.AutoLoginCheck.Text = "Автовход";
             this.AutoLoginCheck.UseVisualStyleBackColor = true;
+            this.AutoLoginCheck.CheckedChanged += new System.EventHandler(this.AutoLoginCheck_CheckedChanged);
             // 
             // ServerTextBox
             // 

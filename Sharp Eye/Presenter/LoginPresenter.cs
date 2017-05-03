@@ -49,6 +49,23 @@ namespace Presenter
 
         private void done()
         {
+            switch(_connectModel.Status)
+            {
+                case Model.Utils.ConnectStatus.Ok:
+                    Connected();
+                    break;
+                case Model.Utils.ConnectStatus.ServerNotFound:
+                    _view.ShowConError("Неправильное имя сервера");
+                    _view.Show();
+                    break;
+                case Model.Utils.ConnectStatus.IncorrectPassOrLogin:
+                    _view.ShowConError("Неправильный логин или пароль");
+                    _view.Show();
+                    break;
+                case Model.Utils.ConnectStatus.Undefined://Нужен ли здесь обработчик?
+                    _view.Show();
+                    break;
+            }
             if (_connectModel.Status != Model.Utils.ConnectStatus.Ok)
             {
                 _view.Show();
@@ -61,7 +78,14 @@ namespace Presenter
 
         public void Connect()
         {
-            _connectModel.Connect(_view.Server,_view.UserName,_view.Password);
+            try
+            {
+                _connectModel.Connect(_view.Server, _view.UserName, _view.Password);
+            }
+            catch(Exception undefined)
+            {
+                _view.ShowConError(undefined.Message);
+            }
         }
     }
 }

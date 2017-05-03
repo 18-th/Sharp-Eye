@@ -22,6 +22,15 @@ namespace View
         public LoginControl()
         {
             InitializeComponent();
+            this.AutoLoginCheck.Checked = Properties.Settings.Default.AutoLaunch;
+            this.RememberPassCheck.Checked = Properties.Settings.Default.RememberPassword;
+            if(Properties.Settings.Default.AutoLaunch)
+            {
+                this.Server = Properties.Settings.Default.ServerURL;
+                this.UserName = Properties.Settings.Default.Username;
+                this.Password = Properties.Settings.Default.ConnectionPassword;
+                Login();
+            }
         }
 
         public string Server { get { return _server; } set { this._server = value; } }
@@ -39,12 +48,13 @@ namespace View
 
         public void Close()
         {
+            Properties.Settings.Default.Save();//Сохранение настроек при закрытии контрола или формы
             throw new NotImplementedException();
         }
 
         public void ShowConError(string message)
         {
-            throw new NotImplementedException();
+            this.NotificationLabel.Text = message;
         }
 
         private void LogInButton_Click(object sender, EventArgs e)
@@ -52,12 +62,32 @@ namespace View
             Server = ServerTextBox.Text;
             UserName = UserTextBox.Text;
             Password = PasswordTextBox.Text;
+            if (_rememberPassword)
+                Properties.Settings.Default.ConnectionPassword = Password;
+            if(_autoLogin)
+            {
+                Properties.Settings.Default.ServerURL = Server;
+                Properties.Settings.Default.Username = UserName;
+                Properties.Settings.Default.ConnectionPassword = Password;
+            }
             Login();
         }
 
         public ILoginView GetView()
         {
             return this;
+        }
+
+        private void RememberPassCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.RememberPassword = RememberPassCheck.Checked;
+            _rememberPassword = RememberPassCheck.Checked;
+        }
+
+        private void AutoLoginCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.AutoLaunch = AutoLoginCheck.Checked;
+            _autoLogin = AutoLoginCheck.Checked;
         }
     }
 }

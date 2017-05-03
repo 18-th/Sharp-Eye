@@ -11,6 +11,7 @@ namespace Model.Utils
     /// </summary>
     public enum ConnectStatus
     {
+        Undefined,
         Ok,
         ServerNotFound,
         IncorrectPassOrLogin
