@@ -23,7 +23,19 @@ namespace View
 
         private void ContainerControl_Load(object sender, EventArgs e)
         {
-            this.Dock = DockStyle.Fill; 
+            this.Dock = DockStyle.Fill;
         }
+
+        public void LoadLoginView(ILoginView view)
+        {
+            UserControl loginView = (UserControl)view;
+            // Устанавливаем контрол по центру
+            loginView.Left = (this.ClientSize.Width - loginView.Width) / 2;
+            loginView.Top = (this.ClientSize.Height - loginView.Height) / 2;
+            this.Controls.Clear();
+            this.Controls.Add(loginView);
+        }
+
+       
     }
 }
