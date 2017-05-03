@@ -36,6 +36,10 @@ namespace View
             this.Controls.Add(loginView);
         }
 
-       
+        public void LoadMainView(IMainView view)
+        {
+            UserControl mainView = (UserControl)view;
+            mainView.Dock = DockStyle.Fill;
+        }
     }
 }
