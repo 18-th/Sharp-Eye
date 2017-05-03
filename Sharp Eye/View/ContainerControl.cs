@@ -14,9 +14,9 @@ namespace View
     /// <summary>
     /// Служит контайнером для всех контролов
     /// </summary>
-    public partial class ContainerControl : UserControl, IContainerView
+    public partial class AppContainerControl : UserControl, IContainerView
     {
-        public ContainerControl()
+        public AppContainerControl()
         {
             InitializeComponent();
         }
@@ -41,5 +41,11 @@ namespace View
             UserControl mainView = (UserControl)view;
             mainView.Dock = DockStyle.Fill;
         }
+
+        public void Show()
+        {
+            this.Show();
+        }
+
     }
 }
