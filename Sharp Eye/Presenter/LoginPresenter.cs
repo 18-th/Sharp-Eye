@@ -7,6 +7,7 @@ using View.Interfaces;
 using Model.Interfaces;
 using Presenter.Interfaces;
 
+
 namespace Presenter
 {
     /// <summary>
@@ -17,7 +18,6 @@ namespace Presenter
     {
         private ILoginView _view;
         private IConnectionModel _connectModel;
-
         public event Action Connected;
 
         public LoginPresenter(ILoginView view, IConnectionModel connectModel)
@@ -28,6 +28,9 @@ namespace Presenter
                 this._connectModel = connectModel;
                 _view.Login += () => login();
                 _connectModel.Done += () => done();
+                //Инициализация
+                VideoOS.Platform.SDK.Environment.Initialize(); //Пусть временно будет тут
+                //Инициализация
             }
             else
             {
@@ -36,20 +39,29 @@ namespace Presenter
             
         }
 
+
         private void login()
         {
-
+            if (_view.Server != null)
+                Connect();
         }
 
 
         private void done()
         {
-
+            if (_connectModel.Status != Model.Utils.ConnectStatus.Ok)
+            {
+                _view.Show();
+            }
+            else
+            {
+                Connected();
+            }    
         }
 
         public void Connect()
         {
-            throw new NotImplementedException();
+            _connectModel.Connect(_view.Server,_view.UserName,_view.Password);
         }
     }
 }

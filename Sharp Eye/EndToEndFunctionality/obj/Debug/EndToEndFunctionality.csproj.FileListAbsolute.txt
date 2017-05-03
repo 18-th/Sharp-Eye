@@ -1,0 +1,5 @@
+C:\Files\Code\TeamLab\Sharp-Eye\Sharp Eye\EndToEndFunctionality\bin\Debug\EndToEndFunctionality.dll
+C:\Files\Code\TeamLab\Sharp-Eye\Sharp Eye\EndToEndFunctionality\bin\Debug\EndToEndFunctionality.pdb
+C:\Files\Code\TeamLab\Sharp-Eye\Sharp Eye\EndToEndFunctionality\obj\Debug\EndToEndFunctionality.csprojResolveAssemblyReference.cache
+C:\Files\Code\TeamLab\Sharp-Eye\Sharp Eye\EndToEndFunctionality\obj\Debug\EndToEndFunctionality.dll
+C:\Files\Code\TeamLab\Sharp-Eye\Sharp Eye\EndToEndFunctionality\obj\Debug\EndToEndFunctionality.pdb

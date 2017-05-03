@@ -17,5 +17,9 @@ namespace View
         {
             InitializeComponent();
         }
+        public void Close()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
