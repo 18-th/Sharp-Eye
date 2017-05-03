@@ -66,14 +66,6 @@ namespace Presenter
                     _view.Show();
                     break;
             }
-            if (_connectModel.Status != Model.Utils.ConnectStatus.Ok)
-            {
-                _view.Show();
-            }
-            else
-            {
-                Connected();
-            }    
         }
 
         public void Connect()
