@@ -1,4 +1,4 @@
-﻿namespace Sharp_Eye
+﻿namespace View
 {
     partial class VideoControl
     {

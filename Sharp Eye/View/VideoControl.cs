@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sharp_Eye
+namespace View
 {
     public partial class VideoControl : UserControl
     {

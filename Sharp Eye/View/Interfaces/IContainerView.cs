@@ -8,5 +8,6 @@ namespace View.Interfaces
 {
     interface IContainerView
     {
+        void LoadLoginView(ILoginView view);
     }
 }
