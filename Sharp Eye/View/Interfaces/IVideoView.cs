@@ -6,11 +6,14 @@ using System.Text;
 using View.Interfaces;
 using System.Windows.Forms;
 
-namespace Sharp_Eye.Interfaces
+namespace View.Interfaces
 {
     public interface IVideoView : IView
     {
         string CameraName { set; get; }
+
+        Panel VideoPanel { set; get; }
+
         event Action CameraSelected;
         event Action CreatePrintScreen;
         event Action CreateBookMarker;
@@ -18,8 +21,5 @@ namespace Sharp_Eye.Interfaces
         
         // Продумывается
         event Action VolumeChanged;
-
-        void SetVideoStream(Panel videoStream);
-        void SetCameraList(string[] cameras);
     }
 }

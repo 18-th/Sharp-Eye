@@ -30,5 +30,10 @@ namespace Model
         {
             throw new Exception();
         }
+
+        public static ICameraManagerModel CameraManagerBuild()
+        {
+            throw new Exception();
+        }
     }
 }

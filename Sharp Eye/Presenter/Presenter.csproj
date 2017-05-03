@@ -53,11 +53,13 @@
     <Compile Include="Interfaces\IBookMarkerService.cs" />
     <Compile Include="Interfaces\IMainPresenter.cs" />
     <Compile Include="Interfaces\IPrintScreenService.cs" />
+    <Compile Include="Interfaces\IVideoPresenter.cs" />
     <Compile Include="LoginPresenter.cs" />
     <Compile Include="Interfaces\ILoginPresenter.cs" />
     <Compile Include="MainPresenter.cs" />
     <Compile Include="PrintScreenService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VideoPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

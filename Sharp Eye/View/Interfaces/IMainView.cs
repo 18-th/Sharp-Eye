@@ -8,5 +8,7 @@ namespace View.Interfaces
 {
     public interface IMainView : IView
     {
+        void AddVideoControl(IVideoView view);
+        void SetCameraList(string[] cameras);
     }
 }
