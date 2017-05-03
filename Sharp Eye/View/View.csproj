@@ -49,6 +49,7 @@
       <DependentUpon>ContainerControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IContainerView.cs" />
+    <Compile Include="Interfaces\ILogView.cs" />
     <Compile Include="Interfaces\IMainView.cs" />
     <Compile Include="Interfaces\IVideoView.cs" />
     <Compile Include="LoginControl.cs">
@@ -79,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainControl.resx">
+      <DependentUpon>MainControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

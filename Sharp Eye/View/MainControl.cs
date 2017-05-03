@@ -24,6 +24,7 @@ namespace View
             DrawGroupBox(box, e.Graphics, Color.Black, Color.Black);
         }
 
+        #region DrawGroupBox
         // Задем свой стиль для журнала
         private void DrawGroupBox(GroupBox box, Graphics g, Color textColor, Color borderColor)
         {
@@ -56,6 +57,13 @@ namespace View
                 //Top2
                 g.DrawLine(borderPen, new Point(rect.X + box.Padding.Left + (int)(strSize.Width), rect.Y), new Point(rect.X + rect.Width, rect.Y));
             }
+        }
+        #endregion
+
+
+        public void AddMessage(string message)
+        {
+            throw new NotImplementedException();
         }
     }
 }

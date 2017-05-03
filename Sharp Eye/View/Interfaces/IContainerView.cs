@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace View.Interfaces
 {
-    interface IContainerView
+    public interface IContainerView : IView
     {
         void LoadLoginView(ILoginView view);
+        void LoadMainView(IMainView view);
     }
 }
