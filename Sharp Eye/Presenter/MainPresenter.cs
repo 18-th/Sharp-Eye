@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Model;
 using Model.Interfaces;
 using Presenter.Interfaces;
+using View;
 using View.Interfaces;
 
 namespace Presenter
@@ -45,8 +46,8 @@ namespace Presenter
         public void Run()
         {
             // временный код
-            IVideoPresenter 
-            _view.AddVideoControl();
+            IVideoPresenter videoPresenter = new VideoPresenter( new VideoControl());
+            _view.AddVideoControl(videoPresenter.GetView());
         }
 
         #region array camera names

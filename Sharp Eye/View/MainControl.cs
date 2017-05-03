@@ -65,5 +65,18 @@ namespace View
         {
             throw new NotImplementedException();
         }
+
+        public void AddVideoControl(IVideoView view)
+        {
+            // для одной камеры
+            Panel panel = view.VideoPanel;
+            panel.Dock = DockStyle.Fill;
+            livePage.Controls.Add(panel);
+        }
+
+        public void SetCameraList(string[] cameras)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
