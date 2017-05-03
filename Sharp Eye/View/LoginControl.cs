@@ -89,5 +89,13 @@ namespace View
             Properties.Settings.Default.AutoLaunch = AutoLoginCheck.Checked;
             _autoLogin = AutoLoginCheck.Checked;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(Login != null)
+            {
+                Login();
+            }
+        }
     }
 }

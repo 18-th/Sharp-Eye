@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace View.Interfaces
 {
-    interface IMainView : IView
+    public interface IMainView : IView
     {
     }
 }

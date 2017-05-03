@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    partial class ContainerControl
+    partial class AppContainerControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,8 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // AppContainerControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.Name = "AppContainerControl";
+            this.Load += new System.EventHandler(this.ContainerControl_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
