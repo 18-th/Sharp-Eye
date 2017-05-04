@@ -35,9 +35,9 @@ namespace Presenter
 
             _loginPresenter = new LoginPresenter(new LoginControl(),
                                                 EntityCreator.ConnectionModelBuild());
+            _loginPresenter.Connected += () => ConnectionCompleted();
 
-
-            _containerView.LoadLoginView();
+            _containerView.LoadLoginView(_loginPresenter.GetView());
 
             _loginPresenter.Connect();
 
