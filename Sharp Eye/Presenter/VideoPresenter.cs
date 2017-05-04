@@ -15,7 +15,7 @@ namespace Presenter
         private IVideoView _view;
         private ICameraModel _camera;
         private IVideoModel _videoModel;
-        private IAudioModel _audioModel;//Она тут нужна или отдельно выносим?
+        private IAudioModel _audioModel;//Она тут нужна или отдельно выносим? Ответ: Да, нужна. Все правильно делаешь.
 
         public ICameraModel Camera { get { return this._camera; }
             set

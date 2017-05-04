@@ -30,12 +30,14 @@ namespace Model
             {
                 foreach (Item item in related)
                 {
+                    MessageBox.Show(item.Name);
                     if (item.FQID.Kind == Kind.Microphone)
                     {
                         //checkBoxAudio.Enabled = true;   //Чеки для mute checkbox
                         //checkBoxAudio.Checked = true;
                         _relatedMicrophone = item;
                         _audioPlayerControl.MicrophoneFQID = item.FQID;
+                        MessageBox.Show(item.Name);
                         _audioPlayerControl.Initialize();
                         _audioPlayerControl.Connect();
                         if (EnvironmentManager.Instance.Mode == Mode.ClientLive) //Не совсем понимаю, что делает эта проверка, кажется проверяет идёт ли Live или запись
