@@ -32,6 +32,12 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SignIn.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,14 +49,17 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="VideoOS.Platform">
-      <HintPath>Lib\x64\VideoOS.Platform.dll</HintPath>
+    <Reference Include="VideoOS.Platform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc60fba4a7969f89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\x86\VideoOS.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="VideoOS.Platform.SDK">
-      <HintPath>Lib\x64\VideoOS.Platform.SDK.dll</HintPath>
+    <Reference Include="VideoOS.Platform.SDK, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bc60fba4a7969f89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\x86\VideoOS.Platform.SDK.dll</HintPath>
     </Reference>
-    <Reference Include="VideoOS.Platform.SDK.UI">
-      <HintPath>Lib\x64\VideoOS.Platform.SDK.UI.dll</HintPath>
+    <Reference Include="VideoOS.Platform.SDK.UI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bc60fba4a7969f89, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\x86\VideoOS.Platform.SDK.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SignIn.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

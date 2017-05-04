@@ -7,22 +7,50 @@ using System.Windows.Forms;
 using Model.Interfaces;
 using VideoOS.Platform.Client;
 using VideoOS.Platform;
+using VideoOS.Platform.Messaging;
+using System.Diagnostics;
+using System.Drawing;
+using VideoOS.Platform.UI;
 
 namespace Model
 {
     class VideoModel : IVideoModel
     {
+        ImageViewerControl _imageViewer;
+
+        public VideoModel()
+        {
+        }
+
         public void SetVideoStreamInPanel(ICameraModel camera, Panel panel)
         {
-            ImageViewerControl imageViewer = ClientControl.Instance.GenerateImageViewerControl();
-            imageViewer.Dock = DockStyle.Fill;
-            panel.Controls.Clear();
-            panel.Controls.Add(imageViewer);
-            imageViewer.CameraFQID = (FQID)camera.Id;
+            ItemPickerForm form = new ItemPickerForm();
+            form.KindFilter = Kind.Camera;
+            form.AutoAccept = true;
+            form.Init(Configuration.Instance.GetItems());
+            if (form.ShowDialog() == DialogResult.OK)
+            {
 
-            imageViewer.Initialize();
-            imageViewer.Connect();
-            imageViewer.EnableDigitalZoom = true;
+                _imageViewer = ClientControl.Instance.GenerateImageViewerControl();
+                _imageViewer.Dock = DockStyle.Fill;
+                panel.Controls.Clear();
+                panel.Controls.Add(_imageViewer);
+                _imageViewer.CameraFQID = form.SelectedItem.FQID;
+
+                _imageViewer.EnableVisibleHeader = true;
+                _imageViewer.EnableVisibleLiveIndicator = EnvironmentManager.Instance.Mode == Mode.ClientLive;
+                _imageViewer.EnableMousePtzEmbeddedHandler = true;
+                _imageViewer.MaintainImageAspectRatio = true;
+                _imageViewer.SetVideoQuality(0, 1);
+                //_imageViewer.ImageOrPaintInfoChanged += ImageOrPaintChangedHandler;
+                _imageViewer.EnableRecordedImageDisplayedEvent = true;
+                _imageViewer.EnableVisibleTimeStamp = true;
+
+                _imageViewer.Initialize();
+                _imageViewer.Connect();
+                _imageViewer.Selected = true;
+                _imageViewer.EnableDigitalZoom = true;
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace View
+﻿namespace Presenter
 {
-    partial class AppContainerControl
+    partial class ActiveXComponent
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -30,13 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // AppContainerControl
+            // ActiveXComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.Name = "AppContainerControl";
-            this.Load += new System.EventHandler(this.ContainerControl_Load);
+            this.Name = "ActiveXComponent";
+            this.Load += new System.EventHandler(this.ActiveXComponent_Load);
             this.ResumeLayout(false);
 
         }

@@ -37,16 +37,15 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.livePage);
             this.tabControl1.Controls.Add(this.playbackPage);
-            this.tabControl1.Location = new System.Drawing.Point(6, 3);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(653, 385);
+            this.tabControl1.Size = new System.Drawing.Size(653, 391);
             this.tabControl1.TabIndex = 1;
             // 
             // livePage
@@ -55,7 +54,7 @@
             this.livePage.Location = new System.Drawing.Point(4, 25);
             this.livePage.Name = "livePage";
             this.livePage.Padding = new System.Windows.Forms.Padding(3);
-            this.livePage.Size = new System.Drawing.Size(645, 356);
+            this.livePage.Size = new System.Drawing.Size(645, 362);
             this.livePage.TabIndex = 0;
             this.livePage.Text = "Наблюдение";
             this.livePage.UseVisualStyleBackColor = true;
@@ -73,7 +72,7 @@
             // cameraComboBox
             // 
             this.cameraComboBox.FormattingEnabled = true;
-            this.cameraComboBox.Location = new System.Drawing.Point(662, 318);
+            this.cameraComboBox.Location = new System.Drawing.Point(661, 303);
             this.cameraComboBox.Name = "cameraComboBox";
             this.cameraComboBox.Size = new System.Drawing.Size(93, 21);
             this.cameraComboBox.TabIndex = 2;

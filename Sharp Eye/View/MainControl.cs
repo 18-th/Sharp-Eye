@@ -13,7 +13,8 @@ namespace View
 {
     public partial class MainControl : UserControl, IMainView, ILogView
     {
-        public string Camera { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private string _camera;
+        public string Camera { get => this._camera; set => this._camera = value; }
         public event Action CameraSelected;
 
 
@@ -77,6 +78,7 @@ namespace View
 
         public void SetCameraList(string[] cameras)
         {
+            //string[] temp = { "K1", "K2" }; 
             cameraComboBox.Items.AddRange(cameras);
         }
 

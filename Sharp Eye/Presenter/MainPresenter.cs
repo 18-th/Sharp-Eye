@@ -8,6 +8,7 @@ using Model.Interfaces;
 using Presenter.Interfaces;
 using View;
 using View.Interfaces;
+using System.Windows.Forms;
 
 namespace Presenter
 {
@@ -52,14 +53,20 @@ namespace Presenter
         private void CameraSelected()
         {
             ICameraModel camera = _cameraManager.GetCameras().Find(c => c.Name == _view.Camera);
+            MessageBox.Show(camera.Name);
             _videoPresenter.Camera = camera;
         }
 
         #region array camera names
         private string[] CameraNames()
         {
-
-            return null;
+            int count = _cameraManager.GetCameras().Count;
+            string[] names = new string[count];
+            for(int i = 0; i < count; i++)
+            {
+                names[i] = _cameraManager.GetCameras().ElementAt(i).Name;
+            }
+            return names;
         }
         #endregion
 

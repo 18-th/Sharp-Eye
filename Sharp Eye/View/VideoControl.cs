@@ -13,8 +13,10 @@ namespace View
 {
     public partial class VideoControl : UserControl, IVideoView
     {
+        private Panel _panel; 
+
         public string CameraName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Panel VideoPanel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Panel VideoPanel { get => _panel; set => _panel = value; }
 
         public event Action CameraSelected;
         public event Action CreatePrintScreen;
@@ -25,8 +27,12 @@ namespace View
         public VideoControl()
         {
             InitializeComponent();
+            _panel = new Panel();
         }
 
-       
+        private void VideoControl_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

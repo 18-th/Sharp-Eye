@@ -19,7 +19,9 @@ namespace Model
         /// </summary>
         public static void Initialize()
         {
-
+            VideoOS.Platform.SDK.Environment.Initialize();
+            VideoOS.Platform.SDK.UI.Environment.Initialize();
+            VideoOS.Platform.SDK.Environment.Properties.ConfigurationRefreshIntervalInMs = 5000;
         }
 
         /// <summary>
@@ -28,17 +30,17 @@ namespace Model
         /// <returns>Объек, выполняющий соединение с сервером</returns>
         public static IConnectionModel ConnectionModelBuild()
         {
-            throw new Exception();
+            return new ConnectionModel();
         }
 
         public static ICameraManagerModel CameraManagerBuild()
         {
-            throw new Exception();
+            return new CameraManagerModel();
         }
 
         public static IVideoModel VideoModelBuild()
         {
-            throw new Exception();
+           return new VideoModel();
         }
     }
 }

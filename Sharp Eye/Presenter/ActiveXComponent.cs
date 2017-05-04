@@ -1,58 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using Microsoft.Win32;
+using System.Reflection;
 using Presenter.Interfaces;
 using View;
-using View.Interfaces;
 using Model;
-using System.Windows.Forms;
-using Microsoft.Win32;
-using System.Runtime.InteropServices;
-using System.Reflection;
+using View.Interfaces;
 
 namespace Presenter
 {
-    /// <summary>
-    /// Класс управляет логикой вызоовов презентеров и отображением контролов
-    /// </summary>
     [ClassInterface(ClassInterfaceType.None)]
-    [Guid("F76C845A-8114-48FD-871C-24513812E17E")]
-    public class ApplicationManager
+    [Guid("ACD5AC4F-AA7A-41A9-8E72-A2575E86AEFB")]
+    public partial class ActiveXComponent : UserControl
     {
 
-        private IContainerView _containerView;
         private ILoginPresenter _loginPresenter;
         private IMainPresenter _mainPresenter;
 
-        public ApplicationManager()
+
+        public ActiveXComponent()
         {
-            EntityCreator.Initialize();
-
-            _containerView = new AppContainerControl();
-            _containerView.Show();
-
-            _loginPresenter = new LoginPresenter(new LoginControl(),
-                                                EntityCreator.ConnectionModelBuild());
-            _loginPresenter.Connected += () => ConnectionCompleted();
-
-            _containerView.LoadLoginView(_loginPresenter.GetView());
-
-            _loginPresenter.Connect();
-
+            InitializeComponent();           
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        public void LoadLoginView(ILoginView view)
+        {
+            UserControl loginView = (UserControl)view;
+            // Устанавливаем контрол по центру
+            loginView.Left = (this.ClientSize.Width - loginView.Width) / 2;
+            loginView.Top = (this.ClientSize.Height - loginView.Height) / 2;
+            this.Controls.Clear();
+            this.Controls.Add(loginView);
+        }
+
+
+        public void LoadMainView(IMainView view)
+        {
+            UserControl mainView = (UserControl)view;
+            mainView.Width = this.ClientSize.Width;
+            mainView.Height = this.ClientSize.Height;
+            this.Controls.Clear();
+            this.Controls.Add(mainView);
+        }
+
         private void ConnectionCompleted()
         {
             _mainPresenter = new MainPresenter(new MainControl());
-            _containerView.LoadMainView(_mainPresenter.GetView());
+            LoadMainView(_mainPresenter.GetView());
 
             _mainPresenter.Run();
         }
+
 
         #region ComReg
 
@@ -145,6 +151,15 @@ namespace Presenter
 
         #endregion
 
+        private void ActiveXComponent_Load(object sender, EventArgs e)
+        {
+            EntityCreator.Initialize();
 
+            _loginPresenter = new LoginPresenter(new LoginControl(), EntityCreator.ConnectionModelBuild());
+            _loginPresenter.Connected += () => ConnectionCompleted();
+
+            LoadLoginView(_loginPresenter.GetView());
+            _loginPresenter.Connect();
+        }
     }
 }
