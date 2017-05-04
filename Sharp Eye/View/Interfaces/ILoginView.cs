@@ -19,5 +19,7 @@ namespace View.Interfaces
         event Action Login;
 
         void ShowConError(string message);
+
+        ILoginView GetView();
     }
 }

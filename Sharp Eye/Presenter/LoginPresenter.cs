@@ -7,6 +7,7 @@ using View.Interfaces;
 using Model.Interfaces;
 using Presenter.Interfaces;
 
+
 namespace Presenter
 {
     /// <summary>
@@ -17,7 +18,6 @@ namespace Presenter
     {
         private ILoginView _view;
         private IConnectionModel _connectModel;
-
         public event Action Connected;
 
         public LoginPresenter(ILoginView view, IConnectionModel connectModel)
@@ -36,20 +36,45 @@ namespace Presenter
             
         }
 
+
         private void login()
         {
-
+            if (_view.Server != null)
+                Connect();
         }
 
 
         private void done()
         {
-
+            switch(_connectModel.Status)
+            {
+                case Model.Utils.ConnectStatus.Ok:
+                    Connected();
+                    break;
+                case Model.Utils.ConnectStatus.ServerNotFound:
+                    _view.ShowConError("Неправильное имя сервера");
+                    _view.Show();
+                    break;
+                case Model.Utils.ConnectStatus.IncorrectPassOrLogin:
+                    _view.ShowConError("Неправильный логин или пароль");
+                    _view.Show();
+                    break;
+                case Model.Utils.ConnectStatus.Undefined://Нужен ли здесь обработчик?
+                    _view.Show();
+                    break;
+            }
         }
 
         public void Connect()
         {
-            throw new NotImplementedException();
+            try
+            {
+                _connectModel.Connect(_view.Server, _view.UserName, _view.Password);
+            }
+            catch(Exception undefined)
+            {
+                _view.ShowConError(undefined.Message);
+            }
         }
     }
 }
