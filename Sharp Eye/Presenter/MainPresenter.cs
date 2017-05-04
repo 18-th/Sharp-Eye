@@ -46,7 +46,7 @@ namespace Presenter
         {
             // временный код
             _view.SetCameraList(CameraNames());
-            _videoPresenter = new VideoPresenter( new VideoControl(), EntityCreator.VideoModelBuild());
+            _videoPresenter = new VideoPresenter( new VideoControl(), EntityCreator.VideoModelBuild(), EntityCreator.AudioModelBuild());
             _view.AddVideoControl(_videoPresenter.GetView());
         }
 

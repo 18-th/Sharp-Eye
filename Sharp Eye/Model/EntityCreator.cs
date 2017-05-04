@@ -42,5 +42,10 @@ namespace Model
         {
            return new VideoModel();
         }
+
+        public static IAudioModel AudioModelBuild()
+        {
+            return new AudioModel();
+        }
     }
 }

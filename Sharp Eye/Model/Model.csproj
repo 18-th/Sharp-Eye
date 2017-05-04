@@ -63,10 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AudioModel.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="CameraManagerModel.cs" />
     <Compile Include="ConnectionModel.cs" />
     <Compile Include="EntityCreator.cs" />
+    <Compile Include="Interfaces\IAudioModel.cs" />
     <Compile Include="Interfaces\ICameraManagerModel.cs" />
     <Compile Include="Interfaces\ICameraModel.cs" />
     <Compile Include="Interfaces\IConnectionModel.cs" />

@@ -15,21 +15,24 @@ namespace Presenter
         private IVideoView _view;
         private ICameraModel _camera;
         private IVideoModel _videoModel;
+        private IAudioModel _audioModel;//Она тут нужна или отдельно выносим?
 
         public ICameraModel Camera { get { return this._camera; }
             set
             {
                 this._camera = value;
-                _videoModel.SetVideoStreamInPanel(_camera, _view.VideoPanel);             
+                _videoModel.SetVideoStreamInPanel(_camera, _view.VideoPanel);
+                _audioModel.SetAudioStreamInPanelDefault(_camera, _view.VideoPanel);           
             }
         }
 
-        public VideoPresenter(IVideoView view, IVideoModel videoModel)
+        public VideoPresenter(IVideoView view, IVideoModel videoModel, IAudioModel audioModel)
         {
-            if(view != null && videoModel != null)
+            if(view != null && videoModel != null && audioModel != null)
             {
                 _view = view;
                 _videoModel = videoModel;
+                _audioModel = audioModel;
             }
         }
 

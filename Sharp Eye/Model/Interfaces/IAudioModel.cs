@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Model.Interfaces
 {
-    interface IAudioModel
+    public interface IAudioModel
     {
+        void SetAudioStreamInPanelDefault(ICameraModel camera, Panel panel);//Нужно добавлять в панель или прикреплять к камере?
     }
 }
