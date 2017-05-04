@@ -76,5 +76,10 @@ namespace Presenter
                 _view.ShowConError(undefined.Message);
             }
         }
+
+        public ILoginView GetView()
+        {
+            return this._view;
+        }
     }
 }
