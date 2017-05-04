@@ -53,7 +53,6 @@ namespace Presenter
         private void CameraSelected()
         {
             ICameraModel camera = _cameraManager.GetCameras().Find(c => c.Name == _view.Camera);
-            MessageBox.Show(camera.Name);
             _videoPresenter.Camera = camera;
         }
 

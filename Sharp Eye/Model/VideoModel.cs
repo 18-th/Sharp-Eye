@@ -24,33 +24,25 @@ namespace Model
 
         public void SetVideoStreamInPanel(ICameraModel camera, Panel panel)
         {
-            ItemPickerForm form = new ItemPickerForm();
-            form.KindFilter = Kind.Camera;
-            form.AutoAccept = true;
-            form.Init(Configuration.Instance.GetItems());
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-                _imageViewer = ClientControl.Instance.GenerateImageViewerControl();
-                _imageViewer.Dock = DockStyle.Fill;
-                panel.Controls.Clear();
-                panel.Controls.Add(_imageViewer);
-                _imageViewer.CameraFQID = form.SelectedItem.FQID;
-
-                _imageViewer.EnableVisibleHeader = true;
-                _imageViewer.EnableVisibleLiveIndicator = EnvironmentManager.Instance.Mode == Mode.ClientLive;
-                _imageViewer.EnableMousePtzEmbeddedHandler = true;
-                _imageViewer.MaintainImageAspectRatio = true;
-                _imageViewer.SetVideoQuality(0, 1);
-                //_imageViewer.ImageOrPaintInfoChanged += ImageOrPaintChangedHandler;
-                _imageViewer.EnableRecordedImageDisplayedEvent = true;
-                _imageViewer.EnableVisibleTimeStamp = true;
-
-                _imageViewer.Initialize();
-                _imageViewer.Connect();
-                _imageViewer.Selected = true;
-                _imageViewer.EnableDigitalZoom = true;
-            }
+            
+            _imageViewer = ClientControl.Instance.GenerateImageViewerControl();
+            _imageViewer.Dock = DockStyle.Fill;
+            panel.Controls.Clear();
+            panel.Controls.Add(_imageViewer);
+            _imageViewer.CameraFQID = (FQID) camera.Id;
+            _imageViewer.EnableVisibleHeader = true;
+            _imageViewer.EnableVisibleLiveIndicator = EnvironmentManager.Instance.Mode == Mode.ClientLive;
+            _imageViewer.EnableMousePtzEmbeddedHandler = true;
+            _imageViewer.MaintainImageAspectRatio = true;
+            _imageViewer.SetVideoQuality(0, 1);
+            //_imageViewer.ImageOrPaintInfoChanged += ImageOrPaintChangedHandler;
+            _imageViewer.EnableRecordedImageDisplayedEvent = true;
+            _imageViewer.EnableVisibleTimeStamp = true;
+            _imageViewer.Initialize();
+            _imageViewer.Connect();
+            _imageViewer.Selected = true;
+            _imageViewer.EnableDigitalZoom = true;
+           
         }
     }
 }
