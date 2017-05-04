@@ -31,6 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.livePage = new System.Windows.Forms.TabPage();
             this.playbackPage = new System.Windows.Forms.TabPage();
+            this.cameraComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.livePage.Location = new System.Drawing.Point(4, 25);
             this.livePage.Name = "livePage";
             this.livePage.Padding = new System.Windows.Forms.Padding(3);
-            this.livePage.Size = new System.Drawing.Size(633, 356);
+            this.livePage.Size = new System.Drawing.Size(645, 356);
             this.livePage.TabIndex = 0;
             this.livePage.Text = "Наблюдение";
             this.livePage.UseVisualStyleBackColor = true;
@@ -69,10 +70,20 @@
             this.playbackPage.Text = "Воспроизведение";
             this.playbackPage.UseVisualStyleBackColor = true;
             // 
+            // cameraComboBox
+            // 
+            this.cameraComboBox.FormattingEnabled = true;
+            this.cameraComboBox.Location = new System.Drawing.Point(662, 318);
+            this.cameraComboBox.Name = "cameraComboBox";
+            this.cameraComboBox.Size = new System.Drawing.Size(93, 21);
+            this.cameraComboBox.TabIndex = 2;
+            this.cameraComboBox.SelectedIndexChanged += new System.EventHandler(this.cameraComboBox_SelectedIndexChanged);
+            // 
             // MainControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cameraComboBox);
             this.Controls.Add(this.tabControl1);
             this.Name = "MainControl";
             this.Size = new System.Drawing.Size(766, 391);
@@ -85,5 +96,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage livePage;
         private System.Windows.Forms.TabPage playbackPage;
+        private System.Windows.Forms.ComboBox cameraComboBox;
     }
 }

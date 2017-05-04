@@ -13,16 +13,17 @@ namespace View
 {
     public partial class MainControl : UserControl, IMainView, ILogView
     {
+        public string Camera { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public event Action CameraSelected;
+
+
         public MainControl()
         {
             InitializeComponent();
         }
 
-        private void logBox_Paint(object sender, PaintEventArgs e)
-        {
-            GroupBox box = sender as GroupBox;
-            DrawGroupBox(box, e.Graphics, Color.Black, Color.Black);
-        }
+        
+
 
         #region DrawGroupBox
         // Задем свой стиль для журнала
@@ -76,7 +77,16 @@ namespace View
 
         public void SetCameraList(string[] cameras)
         {
-            throw new NotImplementedException();
+            cameraComboBox.Items.AddRange(cameras);
+        }
+
+        private void cameraComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Camera = cameraComboBox.SelectedItem.ToString();
+            if(CameraSelected != null)
+            {
+                CameraSelected();
+            }
         }
     }
 }

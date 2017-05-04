@@ -20,17 +20,15 @@ namespace Presenter
 
         private IMainView _view;
         private ICameraManagerModel _cameraManager;
-        private int _countVideoView; 
+        private IVideoPresenter _videoPresenter;
 
         public MainPresenter(IMainView view)
         {
             if(view != null)
             {
                 this._view = view;
-                _countVideoView = 1;
+                _view.CameraSelected += () => CameraSelected();
                 _cameraManager = EntityCreator.CameraManagerBuild();
-                _view.SetCameraList(CameraNames());
-
             }
             else
             {
@@ -46,8 +44,15 @@ namespace Presenter
         public void Run()
         {
             // временный код
-            IVideoPresenter videoPresenter = new VideoPresenter( new VideoControl());
-            _view.AddVideoControl(videoPresenter.GetView());
+            _view.SetCameraList(CameraNames());
+            _videoPresenter = new VideoPresenter( new VideoControl(), EntityCreator.VideoModelBuild());
+            _view.AddVideoControl(_videoPresenter.GetView());
+        }
+
+        private void CameraSelected()
+        {
+            ICameraModel camera = _cameraManager.GetCameras().Find(c => c.Name == _view.Camera);
+            _videoPresenter.Camera = camera;
         }
 
         #region array camera names
