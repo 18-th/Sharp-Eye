@@ -80,7 +80,6 @@
     <Compile Include="Interfaces\IView.cs" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <EmbeddedResource Include="LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,17 +90,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-=======
     <EmbeddedResource Include="ContainerControl.resx">
       <DependentUpon>ContainerControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginControl.resx">
-      <DependentUpon>LoginControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainControl.resx">
       <DependentUpon>MainControl.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> refs/remotes/origin/master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

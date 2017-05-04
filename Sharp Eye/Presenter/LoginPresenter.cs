@@ -28,9 +28,6 @@ namespace Presenter
                 this._connectModel = connectModel;
                 _view.Login += () => login();
                 _connectModel.Done += () => done();
-                //Инициализация
-                VideoOS.Platform.SDK.Environment.Initialize(); //Пусть временно будет тут
-                //Инициализация
             }
             else
             {
