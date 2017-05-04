@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using View.Interfaces;
+using Model.Interfaces;
 
 namespace Presenter.Interfaces
 {
-    interface IMainPresenter
+    interface IVideoPresenter
     {
-        IMainView GetView();
-        void Run();
+        ICameraModel Camera { set; get; } 
+        IVideoView GetView();
     }
 }

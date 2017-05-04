@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using View.Interfaces;
 
-namespace Presenter.Interfaces
+namespace Model.Interfaces
 {
-    interface IMainPresenter
+    public interface ICameraModel
     {
-        IMainView GetView();
-        void Run();
+        Object Id { set; get; }
+        string Name { set; get; }
     }
 }

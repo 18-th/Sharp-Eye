@@ -13,6 +13,10 @@ namespace View
 {
     public partial class MainControl : UserControl, IMainView, ILogView
     {
+        public string Camera { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public event Action CameraSelected;
+
+
         public MainControl()
         {
             InitializeComponent();
@@ -21,11 +25,8 @@ namespace View
         public void Close()
 =======
 
-        private void logBox_Paint(object sender, PaintEventArgs e)
-        {
-            GroupBox box = sender as GroupBox;
-            DrawGroupBox(box, e.Graphics, Color.Black, Color.Black);
-        }
+        
+
 
         #region DrawGroupBox
         // Задем свой стиль для журнала
@@ -68,6 +69,28 @@ namespace View
 >>>>>>> refs/remotes/origin/master
         {
             throw new NotImplementedException();
+        }
+
+        public void AddVideoControl(IVideoView view)
+        {
+            // для одной камеры
+            Panel panel = view.VideoPanel;
+            panel.Dock = DockStyle.Fill;
+            livePage.Controls.Add(panel);
+        }
+
+        public void SetCameraList(string[] cameras)
+        {
+            cameraComboBox.Items.AddRange(cameras);
+        }
+
+        private void cameraComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Camera = cameraComboBox.SelectedItem.ToString();
+            if(CameraSelected != null)
+            {
+                CameraSelected();
+            }
         }
     }
 }

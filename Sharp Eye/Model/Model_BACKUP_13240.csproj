@@ -44,6 +44,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="VideoOS.Platform">
+<<<<<<< HEAD
       <HintPath>Lib\x64\VideoOS.Platform.dll</HintPath>
     </Reference>
     <Reference Include="VideoOS.Platform.SDK">
@@ -51,6 +52,12 @@
     </Reference>
     <Reference Include="VideoOS.Platform.SDK.UI">
       <HintPath>Lib\x64\VideoOS.Platform.SDK.UI.dll</HintPath>
+=======
+      <HintPath>..\..\..\..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="VideoOS.Platform.SDK">
+      <HintPath>..\..\..\..\..\..\Program Files\Milestone\MIPSDK\Bin\VideoOS.Platform.SDK.dll</HintPath>
+>>>>>>> 505e79a78017093823f854fd38167ff9b6f6d7ea
     </Reference>
   </ItemGroup>
   <ItemGroup>

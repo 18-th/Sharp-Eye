@@ -40,9 +40,11 @@ namespace View
         {
             UserControl mainView = (UserControl)view;
             mainView.Dock = DockStyle.Fill;
+            this.Controls.Clear();
+            this.Controls.Add(mainView);
         }
 
-        public void Show()
+        public new void  Show()
         {
             this.Show();
         }

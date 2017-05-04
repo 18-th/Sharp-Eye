@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.LogInButton = new System.Windows.Forms.Button();
             this.RememberPassCheck = new System.Windows.Forms.CheckBox();
             this.AutoLoginCheck = new System.Windows.Forms.CheckBox();
@@ -143,10 +144,15 @@
             this.button1.Click += new System.EventHandler(this.button1_Click);
 >>>>>>> refs/remotes/origin/master
             // 
+=======
+            this.SuspendLayout();
+            // 
+>>>>>>> 8dc8c8fb1ad2c9bd1df4f6b6a6b54c24ef07921a
             // LoginControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.Controls.Add(this.NotificationLabel);
             this.Controls.Add(this.PasswordLabel);
@@ -164,6 +170,8 @@
             this.PerformLayout();
 =======
             this.Controls.Add(this.button1);
+=======
+>>>>>>> 8dc8c8fb1ad2c9bd1df4f6b6a6b54c24ef07921a
             this.Name = "LoginControl";
             this.ResumeLayout(false);
 >>>>>>> refs/remotes/origin/master
@@ -171,6 +179,7 @@
         }
 
         #endregion
+<<<<<<< HEAD
 
 <<<<<<< HEAD
         private System.Windows.Forms.Button LogInButton;
@@ -186,5 +195,7 @@
 =======
         private System.Windows.Forms.Button button1;
 >>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> 8dc8c8fb1ad2c9bd1df4f6b6a6b54c24ef07921a
     }
 }

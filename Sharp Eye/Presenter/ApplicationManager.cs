@@ -21,6 +21,7 @@ namespace Presenter
     [Guid("F76C845A-8114-48FD-871C-24513812E17E")]
     public class ApplicationManager
     {
+
         private IContainerView _containerView;
         private ILoginPresenter _loginPresenter;
         private IMainPresenter _mainPresenter;
@@ -34,6 +35,12 @@ namespace Presenter
 
             _loginPresenter = new LoginPresenter(new LoginControl(),
                                                 EntityCreator.ConnectionModelBuild());
+
+
+            _containerView.LoadLoginView();
+
+            _loginPresenter.Connect();
+
         }
 
         /// <summary>
@@ -41,7 +48,10 @@ namespace Presenter
         /// </summary>
         private void ConnectionCompleted()
         {
+            _mainPresenter = new MainPresenter(new MainControl());
+            _containerView.LoadMainView(_mainPresenter.GetView());
 
+            _mainPresenter.Run();
         }
 
         #region ComReg
