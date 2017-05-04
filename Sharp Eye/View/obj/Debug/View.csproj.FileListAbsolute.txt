@@ -1,0 +1,3 @@
+C:\Files\Code\TeamLab\Sharp-Eye\Sharp Eye\View\obj\Debug\View.csprojResolveAssemblyReference.cache
+C:\Files\Code\TeamLab\Sharp-Eye\Sharp Eye\View\obj\Debug\View.LoginControl.resources
+C:\Files\Code\TeamLab\Sharp-Eye\Sharp Eye\View\obj\Debug\View.csproj.GenerateResource.Cache

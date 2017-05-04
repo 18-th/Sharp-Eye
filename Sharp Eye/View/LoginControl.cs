@@ -42,12 +42,6 @@ namespace View
             throw new NotImplementedException();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(Login != null)
-            {
-                Login();
-            }
-        }
+
     }
 }
