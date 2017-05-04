@@ -10,6 +10,7 @@ namespace Presenter.Interfaces
     /// </summary>
     interface ILoginPresenter
     {
+        event Action Connected;
         void Connect();
     }
 }
