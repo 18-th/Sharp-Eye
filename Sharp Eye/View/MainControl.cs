@@ -21,9 +21,6 @@ namespace View
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
-        public void Close()
-=======
 
         
 
@@ -66,7 +63,6 @@ namespace View
 
 
         public void AddMessage(string message)
->>>>>>> refs/remotes/origin/master
         {
             throw new NotImplementedException();
         }

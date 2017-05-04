@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.LogInButton = new System.Windows.Forms.Button();
             this.RememberPassCheck = new System.Windows.Forms.CheckBox();
             this.AutoLoginCheck = new System.Windows.Forms.CheckBox();
@@ -129,31 +127,13 @@
             this.NotificationLabel.Name = "NotificationLabel";
             this.NotificationLabel.Size = new System.Drawing.Size(0, 13);
             this.NotificationLabel.TabIndex = 9;
-=======
-            this.button1 = new System.Windows.Forms.Button();
+
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(42, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 21);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
->>>>>>> refs/remotes/origin/master
-            // 
-=======
-            this.SuspendLayout();
-            // 
->>>>>>> 8dc8c8fb1ad2c9bd1df4f6b6a6b54c24ef07921a
             // LoginControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.Controls.Add(this.NotificationLabel);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UserLabel);
@@ -168,20 +148,10 @@
             this.Size = new System.Drawing.Size(320, 254);
             this.ResumeLayout(false);
             this.PerformLayout();
-=======
-            this.Controls.Add(this.button1);
-=======
->>>>>>> 8dc8c8fb1ad2c9bd1df4f6b6a6b54c24ef07921a
-            this.Name = "LoginControl";
-            this.ResumeLayout(false);
->>>>>>> refs/remotes/origin/master
 
         }
 
         #endregion
-<<<<<<< HEAD
-
-<<<<<<< HEAD
         private System.Windows.Forms.Button LogInButton;
         private System.Windows.Forms.CheckBox RememberPassCheck;
         private System.Windows.Forms.CheckBox AutoLoginCheck;
@@ -192,10 +162,6 @@
         private System.Windows.Forms.Label UserLabel;
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Label NotificationLabel;
-=======
-        private System.Windows.Forms.Button button1;
->>>>>>> refs/remotes/origin/master
-=======
->>>>>>> 8dc8c8fb1ad2c9bd1df4f6b6a6b54c24ef07921a
+
     }
 }
